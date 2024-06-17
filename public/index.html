@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning Poker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div id="container">
+    <h1>Woundtech Planning Poker</h1>
+    <div id="name-input">
+      <input type="text" id="name" placeholder="Enter your name">
+      <button id="start-btn">Start</button>
+    </div>
+    <div id="voting-section" style="display: none;">
+      <h2 id="welcome-message"></h2>
+      <div id="participants">
+        <h3>Participants:</h3>
+        <ul id="participant-list"></ul>
+      </div>
+      <div id="cards">
+        <button class="card" data-value="1">1</button>
+        <button class="card" data-value="2">2</button>
+        <button class="card" data-value="3">3</button>
+        <button class="card" data-value="5">5</button>
+        <button class="card" data-value="8">8</button>
+        <button class="card" data-value="13">13</button>
+        <button class="card" data-value="coffee"><i class="fas fa-coffee"></i></button>
+      </div>
+      <div class="controls">
+        <button id="reveal-btn"><i class="fas fa-eye"></i> Reveal Cards</button>
+        <button id="reset-btn"><i class="fas fa-redo"></i> Reset</button>
+      </div>
+      <div id="results"></div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
