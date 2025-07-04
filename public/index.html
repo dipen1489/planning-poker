@@ -16,9 +16,13 @@
     </div>
     <div id="voting-section" style="display: none;">
       <h2 id="welcome-message"></h2>
+      <button id="change-name-btn"><i class="fas fa-user-edit"></i> Change Name</button>
       <div id="participants">
         <h3>Participants:</h3>
-        <ul id="participant-list"></ul>
+        <div id="participant-cards"></div>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label id="averageScore" ></label>
       </div>
       <div id="cards">
         <button class="card" data-value="1">1</button>
@@ -32,8 +36,29 @@
       <div class="controls">
         <button id="reveal-btn"><i class="fas fa-eye"></i> Reveal Cards</button>
         <button id="reset-btn"><i class="fas fa-redo"></i> Reset</button>
+        <button id="spin-btn"><i class="fas fa-sync-alt"></i> Spin the Wheel</button>
       </div>
-      <div id="results"></div>
+    </div>
+  </div>
+  <div id="wheel-modal" class="modal">
+    <div class="modal-content" style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start;">
+      <div style="flex: 1; margin-top: -30px;">
+        <span class="close" id="close-wheel">&times;</span>
+        <h2>Spin the Wheel!</h2>
+        <div style="position: relative; width: 400px; height: 400px; margin: 0 auto;">
+          <canvas id="wheel-canvas" width="400" height="400"></canvas>
+          <button id="spin-wheel-btn" class="center-spin-btn">Spin</button>
+        </div>
+        <div id="winner-name"></div>
+      </div>
+      <div style="flex: 1; min-width: 180px; text-align: left;">
+        <h3>Participants</h3>
+        <div class="add-wheel-row">
+          <input type="text" id="add-wheel-name" placeholder="Add name...">
+          <button id="add-wheel-btn">Add</button>
+        </div>
+        <div id="wheel-participant-list" style="max-height: 320px; overflow-y: auto; margin-bottom: 10px;"></div>
+      </div>
     </div>
   </div>
   <script src="/socket.io/socket.io.js"></script>
